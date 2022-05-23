@@ -3,7 +3,7 @@ QUESTION: Given an integer array nums and an integer k, return the number of non
           A subarray is a contiguous part of an array.
           
 *************************************************************************************************************/
-/*         #####################################need another approach############################      66/73 test cases passed       */
+/*         #####################################need another approach############################      66/73 test cases passed        O(n^2) time complexity   */
 
 class Solution {
 public:
@@ -24,4 +24,40 @@ public:
         return count;
     }
     
+};
+
+// ############################################################################################
+
+
+/***********************************     O(n) Time complexity approach       *************************************/
+
+
+class Solution {
+public:
+    int subarraysDivByK(vector<int>& nums, int k) {
+         int sum = 0, count = 0, n = nums.size();
+    map<int, int> m;
+        m[0]++ ;
+        for(int i = 0; i< n ; i++)
+        {
+             sum += nums[i];
+            if(sum%k >= 0)       
+                nums[i] = sum%k;
+            else
+                nums[i]  =sum%k + k;
+        }
+        
+        for(int i = 0 ; i< n; i++)
+        {
+            m[nums[i]]++;
+        }
+    for(auto it : m)
+    {
+        if(it.second > 1 )
+        {
+            count += it.second * (it.second - 1)/2;
+        }
+    }
+        return count;
+    }
 };
