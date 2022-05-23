@@ -37,7 +37,7 @@ public:
     int subarraysDivByK(vector<int>& nums, int k) {
          int sum = 0, count = 0, n = nums.size();
     map<int, int> m;
-        m[0]++ ;
+        m[0]++ ;                            // intially storing sum as 0(required) so as to not miss the basic subarray
         for(int i = 0; i< n ; i++)
         {
              sum += nums[i];
