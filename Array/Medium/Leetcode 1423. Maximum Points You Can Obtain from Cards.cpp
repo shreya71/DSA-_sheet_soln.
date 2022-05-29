@@ -6,6 +6,7 @@ QUESTION: There are several cards arranged in a row, and each card has an associ
 APPROACH: Taking sum of required number of(k) consecutive terms from beginning, then checking all possibilities for max sum by removing k-1th term from sum and
           adding last term of the array/vector. Repeat the process till sum of all k consecutive terms starting from left is obtained. Update sum wherever max obtained.
           
+                                                                SLIDING WINDOW APPROACH
 ************************************************************************************************************************************************/  
 
 class Solution {
