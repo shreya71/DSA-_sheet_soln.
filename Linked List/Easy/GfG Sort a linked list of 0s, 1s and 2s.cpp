@@ -18,7 +18,7 @@ class node
         next = NULL;
     }
 };
-void push(node* &head, int val)
+void push(node* &head, int val)          //insertAtHead
 {
     node* n = new node(val);
     n->next = head;
